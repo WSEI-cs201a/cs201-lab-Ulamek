@@ -4,10 +4,10 @@
 skinparam classAttributeIconSize 0
 set namespaceSeparator ::
 
-title Struktura Ulamek -- krok 1
+title Klasa Ulamek -- krok 1
 
-note top of Ulamek
-  # Typ ""Ulamek"" jest strukturą
+note bottom of Ulamek
+  # Typ ""Ulamek"" jest klasą
   # Instancje typu ""Ulamek"" są <i>immutables</i>
   # ""Ulamek"" o mianowniku == 0 nie istnieje
   # Domyślną wartością typu jest ułamek
@@ -19,7 +19,7 @@ end note
 
 
 
-class Ulamek <<struct>> {
+class Ulamek <<class>> {
   .. pola ..
   - long licznik {readonly}
   - long mianownik {readonly}
@@ -27,7 +27,7 @@ class Ulamek <<struct>> {
   + long Licznik {get}
   + long Mianownik {get}
   --  konstruktory  --
-  + --Ulamek()--
+  + Ulamek()
   + Ulamek( long licznik, long mianownik )
   + Ulamek( long liczba )
   + Ulamek( double liczba )
@@ -36,11 +36,6 @@ class Ulamek <<struct>> {
   -- reprezentacja tekstowa --
   + string ToString() {override}
 }
-
-
-
-
-
 
 
 abstract class System::ValueType <<abstract class>> {
@@ -76,7 +71,7 @@ System::ValueType <|-- System::Int64
 System::ValueType <|-- System::...
 System::ValueType <|-- System::Double
 System::Enum -|> System::ValueType
-System::ValueType <|- Ulamek
+System::Object <|- Ulamek
 
 
 hide <<struct>> circle

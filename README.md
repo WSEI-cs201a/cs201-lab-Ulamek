@@ -3,12 +3,7 @@
 > Autor: _Krzysztof Molenda_
 > Wersja: 1.1 (2018.09.01)
 
-Twoim zadaniem jest realizacja w C# typu `Ulamek`,  
-reprezentującego matematyczną koncepcję liczby wymiernej. Realizacja typu
-powinna być spójna, kompletna, dobrze udokumentowana i przetestowana.  
-Powinna dostarczać naturalnych dla użytkownika mechanizmów użycia
-(naturalnych = jak w matematyce oraz podobnych do tych, które stosowane
-są w analogicznych konstrukcjach języka C#).
+Twoim zadaniem jest realizacja w C# typu `Ulamek`, reprezentującego matematyczną koncepcję liczby wymiernej. Realizacja typu powinna być spójna, kompletna, dobrze udokumentowana i przetestowana. Powinna dostarczać naturalnych dla użytkownika mechanizmów użycia (naturalnych = jak w matematyce oraz podobnych do tych, które stosowane są w analogicznych konstrukcjach języka C#).
 
 > UWAGA: W realizacji zadania celowo w kodzie używać będziemy nazw polskich, dla celów edukacyjnych, aby wizualnie oddzielić to, co definiujemy, od tego, co jest zdefiniowane na poziomie języka i jego bibliotek. W praktyce stosujemy język angielski.
 
@@ -36,15 +31,15 @@ Console.WriteLine( 0.1 + 0.2 == 0.3 );
 
 Platformy .NET (.NET Framework, .NET Core) dostarczają predefiniowane typy liczbowe:
 
-* `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong` - reprezentacja liczb całkowitych, bez utraty dokładności, w formie typu wartościowego
+* `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong` -- reprezentacja liczb całkowitych, bez utraty dokładności, w formie typu wartościowego
 
-* `float`, `double` - zmiennoprzecinkowa reprezentacja liczb rzeczywistych, z utratą dokładności, w formie typu wartościowego 
+* `float`, `double` -- zmiennoprzecinkowa reprezentacja liczb rzeczywistych, z utratą dokładności, w formie typu wartościowego
 
-* `decimal` - stałoprzecinkowa reprezentacja liczb rzeczywistych, ze stałą dokładnością ale pamięciożerna, w formie typu wartościowego
+* `decimal` -- stałoprzecinkowa reprezentacja liczb rzeczywistych, ze stałą dokładnością ale pamięciożerna, w formie typu wartościowego
 
-* `BigInteger` - obiektowa reprezentacja liczby całkowitej o dowolnym (praktycznie nieograniczonym) zakresie (potrzebne w kryptografii) - w przestrzeni nazw `System.Numerics`
+* `BigInteger` -- obiektowa reprezentacja liczby całkowitej o dowolnym (praktycznie nieograniczonym) zakresie (potrzebne w kryptografii) - w przestrzeni nazw `System.Numerics`
 
-* `Complex` - reprezentacja liczby zespolonej, w formie typu wartościowego
+* `Complex` -- reprezentacja liczby zespolonej, w formie typu wartościowego
 
 W standardowych bibliotekach .NET (C#) jednak nie ma typu realizującego koncepcję ułamka (`Rational`).  Jej implementacja jest za to w pakiecie [Microsoft Solver Foundation](https://msdn.microsoft.com/en-us/library/microsoft.solverfoundation.common.rational(v=vs.93).aspx), zrealizowana w formie struktury, w dość specyficzny sposób i z bardzo ubogą dokumentacją (prawdopodobnie tylko dla potrzeb narzędzia *Solver*).
 
@@ -56,7 +51,7 @@ Założenia ogólne dotyczące implementacji typu `Ulamek`:
 
 1. Implementowany typ realizuje matematyczną koncepcję liczby wymiernej (https://en.wikipedia.org/wiki/Rational_number).
 
-2. Realizacja typu w formie klasy języka C#.
+2. Realizacja typu *w formie klasy* języka C#.
 
 3. Instancje typu są niezmiennicze (_immutables_).
 

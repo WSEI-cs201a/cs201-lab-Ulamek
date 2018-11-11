@@ -2,6 +2,8 @@
 
 W kroku tym zdefiniujesz podstawową funkcjonalność projektowanego typu.
 
+![Diagram UML](img/UlamekKrok1.png)
+
 Wykonuj zadania w podanej kolejności.
 
 ### Zadania do wykonania - część 1
