@@ -2,7 +2,6 @@
 
 W kroku tym zdefiniujesz podstawową funkcjonalność projektowanego typu.
 
-![Diagram UML](img/UlamekKrok1.png)
 
 Wykonuj zadania w podanej kolejności.
 
@@ -40,10 +39,11 @@ Wykonuj zadania w podanej kolejności.
 
 7. Zapewnij, aby ułamek zapamiętany był w postaci nieskracalnej (licznik i mianownik są względnie pierwsze). Opracuj testy jednostkowe weryfikujące tę funkcjonalność.
 
+![Diagram UML](img/UlamekKrok1-1.png)
 
 #### Podpowiedzi - część 1
 
-1. _Niezmienniczość_ obiektów zapewnisz słowem kluczowym [readonly](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly) (po to zresztą zostało wprowadzone do języka). Jeśli jednak ustanowi ono zbyt duże restrykcje, będziesz musiał zadbać o nie wykonywanie żadnych zmian w zainicjowanych polach klasy i udostępniać je jedynie do odczytu.
+1. _Niezmienniczość_ obiektów zapewnisz słowem kluczowym [`readonly`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly) (po to zresztą zostało wprowadzone do języka). Jeśli jednak ustanowi ono zbyt duże restrykcje, będziesz musiał zadbać o nie wykonywanie żadnych zmian w zainicjowanych polach klasy i udostępniać je jedynie do odczytu.
 
 2. Implementacja konstruktorów - możesz utworzyć trzy przeciążone konstruktory:
 
