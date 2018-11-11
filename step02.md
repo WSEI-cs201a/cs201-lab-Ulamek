@@ -1,4 +1,4 @@
-## Krok 2. Równosć ułamków ##
+## Krok 2. Równość ułamków ##
 
 Krok ten będzie miał niewiele zadań do wykonania (literalnie), ale jest prawdopodobnie najtrudniejszy.
 
@@ -17,7 +17,7 @@ Wykonuj zadania w podanej kolejności.
 
 5. Zaimplementuj interfejs `IEquatable<Ulamek>`.
 
-6. Zaimplementuj statyczą wersję metody `Equals` o sygnaturze:
+6. Zaimplementuj statyczną wersję metody `Equals` o sygnaturze:
     ````charp
     public static bool Equals(Ulamek u1, Ulamek u2)
     ````
@@ -54,7 +54,7 @@ Wykonuj zadania w podanej kolejności.
 
     Podane warunki przydadzą Ci się do opracowania testów jednostkowych Twojej implementacji równości ułamków.
 
-   > Info: Dwa ułamki są sobie równe, jeżeli należą do tej samej _klasy równoważności_ względem relacji równości (też pojęcie _stricte_ matematyczne). Oznacza to, że np. 2/4 == 1/2. Ale tym problemem nie musimyu się przejmować, ponieważ nasza implementacja przewiduje upraszczanie ulamków. Stąd, porównywanie ułamków może odbyć się _pole po polu_, jak domyślnie dla typów strukturalnych.
+   > Info: Dwa ułamki są sobie równe, jeżeli należą do tej samej _klasy równoważności_ względem relacji równości (też pojęcie _stricte_ matematyczne). Oznacza to, że np. 2/4 == 1/2. Ale tym problemem nie musimy się przejmować, ponieważ nasza implementacja przewiduje upraszczanie ułamków. Stąd, porównywanie ułamków może odbyć się _pole po polu_, jak domyślnie dla typów strukturalnych.
 
 4. Przeanalizuj i ustal różnice między trzema sposobami porównywania:
 
@@ -92,4 +92,4 @@ Wykonuj zadania w podanej kolejności.
 
 
 
-[Początek](Readme.md) | [Krok poprzedni](step01.md) | [Krok następny](step03.md)
+[Początek](README.md) | [Krok poprzedni](step01.md) | [Krok następny](step03.md)

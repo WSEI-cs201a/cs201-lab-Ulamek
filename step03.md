@@ -2,7 +2,7 @@
 
 W kroku tym zdefiniujesz podstawowe działania arytmetyczne i operacje matematyczne na ułamkach.
 
-Kod z tego etapu prawdopodobnie zrefaktoryzujesz po zrealizowaniu etapu związnego z konwersjami.
+Kod z tego etapu prawdopodobnie zrefaktoryzujesz po zrealizowaniu etapu związanego z konwersjami.
 
 Wykonuj zadania w podanej kolejności.
 
@@ -30,7 +30,7 @@ Wykonuj zadania w podanej kolejności.
 
     Próba dodania `null` skutkuje zgłoszeniem wyjątku `ArgumentException`.
 
-6. Zmodyfikuj metodę `Suma` tak, aby mogła przyjać wiele argumentów (ale co najmniej 2).
+6. Zmodyfikuj metodę `Suma` tak, aby mogła przyjąć wiele argumentów (ale co najmniej 2).
 
 7. Zdefiniuj przeciążenie operatora `+`.
 
@@ -56,4 +56,4 @@ Wykonuj zadania w podanej kolejności.
 
 3. Klasa [System.Math](https://docs.microsoft.com/pl-pl/dotnet/api/system.math?view=netframework-4.7.2)
 
-[Początek](Readme.md) | [Krok poprzedni](step02.md) | [Krok następny](step04.md)
+[Początek](README.md) | [Krok poprzedni](step02.md) | [Krok następny](step04.md)

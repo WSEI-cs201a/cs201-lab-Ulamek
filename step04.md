@@ -1,6 +1,6 @@
 ## Krok 4. Porównywanie ułamków ##
 
-W tym etapie zdefiujesz mechanizmy porównywania ułamków.
+W tym etapie zdefiniujesz mechanizmy porównywania ułamków.
 
 
 Wykonuj zadania w podanej kolejności.
@@ -24,7 +24,7 @@ Wykonuj zadania w podanej kolejności.
 
 #### Podpowiedzi
 
-1. Poczytaj na temat IComparable oraz IComparer (https://www.c-sharpcorner.com/uploadfile/yougerthen/using-icomparable-and-icomparer-to-compare-objects/).
+1. Poczytaj na temat `IComparable` oraz `IComparer` (https://www.c-sharpcorner.com/uploadfile/yougerthen/using-icomparable-and-icomparer-to-compare-objects/).
 
 2. Implementując metodę [`CompareTo()`](https://docs.microsoft.com/pl-pl/dotnet/api/system.icomparable.compareto) musisz spełnić następujące warunki:
 
@@ -42,4 +42,4 @@ Wykonuj zadania w podanej kolejności.
 
 
 
-[Początek](Readme.md) | [Krok poprzedni](step03.md) | [Krok następny](step05.md)
+[Początek](README.md) | [Krok poprzedni](step03.md) | [Krok następny](step05.md)

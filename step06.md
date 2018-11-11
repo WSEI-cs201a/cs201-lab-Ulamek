@@ -31,4 +31,4 @@ Wykonuj zadania w podanej kolejności.
 
 
 
-[Początek](Readme.md) | [Krok poprzedni](step05.md) | [Krok następny](step07.md)
+[Początek](README.md) | [Krok poprzedni](step05.md) | [Krok następny](step07.md)

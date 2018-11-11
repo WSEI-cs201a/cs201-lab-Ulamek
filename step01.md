@@ -41,7 +41,7 @@ Wykonuj zadania w podanej kolejności.
 
 #### Podpowiedzi - część 1
 
-1. _Niezmienniczość_ obiektów zapewnisz słowem kluczowym [readonly](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly) (po to zresztą zostało wprowadzone do języka). Jesli jednak ustanowi ono zbyt duże restrykcje, będziesz musiał zadbać o nie wykonywanie żadnych zmian w zainicjowanych polach klasy i udostępniać je jedynie do odczytu.
+1. _Niezmienniczość_ obiektów zapewnisz słowem kluczowym [readonly](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly) (po to zresztą zostało wprowadzone do języka). Jeśli jednak ustanowi ono zbyt duże restrykcje, będziesz musiał zadbać o nie wykonywanie żadnych zmian w zainicjowanych polach klasy i udostępniać je jedynie do odczytu.
 
 2. Implementacja konstruktorów - możesz utworzyć trzy przeciążone konstruktory:
 
@@ -56,14 +56,14 @@ Wykonuj zadania w podanej kolejności.
 
 4. Upraszczając ułamki skorzystasz z algorytmu Euklidesa obliczania NWD (ang. _GCD_). Nie znajdziesz go w klasie [`System.Math`](https://msdn.microsoft.com/en-us/library/system.math). Zatem:
 
-    * albo zaimplementujesz go samodzielnie, np na podstawie informacji z [Wikibooks](https://pl.wikibooks.org/wiki/Kody_%C5%BAr%C3%B3d%C5%82owe/Algorytm_Euklidesa#C/C++,_C#,_Java)
+    * albo zaimplementujesz go samodzielnie, np. na podstawie informacji z [Wikibooks](https://pl.wikibooks.org/wiki/Kody_%C5%BAr%C3%B3d%C5%82owe/Algorytm_Euklidesa#C/C++,_C#,_Java)
         > UWAGA: przed użyciem, sprawdź poprawność działania tego algorytmu dla rozwiązania Twojego problemu -> jak zachowuje się dla liczb o różnych znakach.
 
     * albo skorzystasz z tego, dostarczonego w klasie [`System.Numerics.BigInteger`](https://msdn.microsoft.com/en-us/library/system.numerics.biginteger.greatestcommondivisor(v=vs.110).aspx).
 
     Proces upraszczania należy umieścić w konstruktorach po to, by zapamiętany ułamek był już nieskracalny.
 
-5. Upraszczanie jest działaniem potencjalnie pochłaniającym czas (patrz: [Algorytm Euklidesa](https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)) - w przypadku dużych liczb budujących ułamek. Rozważ możliwość selektywnego włączania lub wyłączania tego procesu. Możesz to zrealizować, poprzez zdefiniowanie prywatnego konstruktora, np:
+5. Upraszczanie jest działaniem potencjalnie pochłaniającym czas (patrz: [Algorytm Euklidesa](https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)) - w przypadku dużych liczb budujących ułamek. Rozważ możliwość selektywnego włączania lub wyłączania tego procesu. Możesz to zrealizować, poprzez zdefiniowanie prywatnego konstruktora, np.:
     ````csharp
     private Ulamek(long licznik, long mianownik, bool upraszczanie)
     {
@@ -126,7 +126,7 @@ Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niekt�
 
 7. Zaimplementuj konstruktor `Ulamek(double)` oraz `Ulamek(decimal)` tak, aby korespondował z wcześniej opracowanymi konwersjami do tych typów.
 
-8. Zaimplementuj konwersję Ułamka do typu `long` - z utratą informacji - będzie to wyznaczenie częsci całkowitejj z dzielenia.
+8. Zaimplementuj konwersję Ułamka do typu `long` - z utratą informacji - będzie to wyznaczenie części całkowitej z dzielenia.
 
 9. Utwórz stosowne testy jednostkowe weryfikujące poprawność opracowanych metod.
 
@@ -135,10 +135,10 @@ Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niekt�
 
 1. Do konwersji z `string` do `Ulamek` będziesz musiał parsować napis. Rozważ zastosowanie metody [string.Split](https://docs.microsoft.com/pl-pl/dotnet/csharp/how-to/parse-strings-using-split). Możesz również zastosować [wyrażenia regularne (REGEX)](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions).
 
-2. Zadania dotyczące konwersji na inne typy liczbowe powtórzysz przy implementacji operatorów konwesji jawnej (rzutowanie) i niejawnej, w kolejnych krokach.
+2. Zadania dotyczące konwersji na inne typy liczbowe powtórzysz przy implementacji operatorów konwersji jawnej (rzutowanie) i niejawnej, w kolejnych krokach.
 
 3. W języku C# stałe definiowane są za pomocą słowa kluczowego [`const`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/const). Definiowana stała musi być jasno określona lub możliwa do ustalenia jeszcze w trakcie kompilacji. W naszym przypadku zasymulujesz działanie stałej zmienną tylko do odczytu (prawdopodobnie użyjesz `public static readonly`).
 
 
 
-[Początek](Readme.md) | [Krok poprzedni](step00.md) | [Krok następny](step02.md)
+[Początek](README.md) | [Krok poprzedni](step00.md) | [Krok następny](step02.md)

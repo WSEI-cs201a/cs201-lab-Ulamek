@@ -1,6 +1,6 @@
 ## Krok 5. Konwersje ##
 
-W tym etapie zdefiujesz mechanizmy konwersji ułamków do innych typów - konwersje automatyczne i rzutowanie.
+W tym etapie zdefiniujesz mechanizmy konwersji ułamków do innych typów - konwersje automatyczne i rzutowanie.
 
 
 Wykonuj zadania w podanej kolejności.
@@ -23,4 +23,4 @@ Wykonuj zadania w podanej kolejności.
 
 2. Raczej nie stosuje się konwersji jawnych i niejawnych dla `string` - od tego są dostarczane dedykowane metody.
 
-[Początek](Readme.md) | [Krok poprzedni](step04.md) | [Krok następny](step06.md)
+[Początek](README.md) | [Krok poprzedni](step04.md) | [Krok następny](step06.md)
