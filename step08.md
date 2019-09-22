@@ -5,7 +5,7 @@ elementarnie proste problemy na SPOJ:
    * [SIMPLE - Make It Simple](https://www.spoj.com/problems/SIMPLE/)
    * [SUMFRAC - Sum of fractions](https://www.spoj.com/problems/SUMFRAC/)
 
-2. W ramach nowego projektu, opracuj klasę `Ulamek`, gdzie wewnętrzną reprezentacją licznika i mianownika będzie obiekt `BigInteger`. 
+2. W ramach nowego projektu, opracuj klasę `Ulamek`, gdzie licznik i mianownik są typu [`BigInteger`](https://docs.microsoft.com/en-Us/dotnet/api/system.numerics.biginteger?view=netstandard-2.0). 
 Taką klasę możesz wykorzystać do obliczeń dokładnych na ułamkach.
 
 3. W ramach nowego projektu, opracuj **strukturę** `Ulamek`. Twój kod bedzie wymagał drobnych modyfikacji. 
