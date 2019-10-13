@@ -2,7 +2,6 @@
 
 W kroku tym zdefiniujesz podstawową funkcjonalność projektowanego typu.
 
-
 Wykonuj zadania w podanej kolejności.
 
 ### Zadania do wykonania - część 1
@@ -27,14 +26,14 @@ Wykonuj zadania w podanej kolejności.
 
     Opracuj testy jednostkowe weryfikujące poprawność działania konstruktorów oraz _gettersów_.
 
-6. Przyjmij, że tekstową reprezentacją ułamka jest postać: 
-    
+6. Przyjmij, że tekstową reprezentacją ułamka jest postać:
+
     `[znak]<<licznik>>/<<mianownik>>`
 
     na przykład `-2/3` lub `-7/2`, ale nie `2/-3` oraz nie `1 1/2`. 
 
     Opracuj odpowiednie przeciążenie metody `ToString()`.
-    
+
     Opracuj testy jednostkowe weryfikujące poprawność reprezentacji tekstowej ułamka.
 
 7. Zapewnij, aby ułamek zapamiętany był w postaci nieskracalnej (licznik i mianownik są względnie pierwsze). Opracuj testy jednostkowe weryfikujące tę funkcjonalność.
@@ -79,8 +78,7 @@ Wykonuj zadania w podanej kolejności.
     ````
     Z tego konstruktora zawsze będziesz korzystał budując ułamki wewnątrz projektowanej klasy, pozostałe konstruktory - z domyślnie włączonym upraszczaniem - udostępnisz światowi zewnętrznemu.  
 
-6. Aby zapewnić niemożliwość operowania na obiektach typu `Ulamek`, których `mianownik` byłby zerowy, w konstruktorach musisz zgłosić wyjątek, np. `DivideByZeroException`.
-
+6. Aby zapewnić niemożliwość operowania na obiektach typu `Ulamek`, których `mianownik` byłby zerowy, w konstruktorach **musisz** zgłosić wyjątek, np. `DivideByZeroException`.
 
 7. Ponieważ testów jednostkowy dla Twojej klasy będzie dużo, rozbij je na wiele klas i plików. Dla potrzeb testowania podstawowej funkcjonalności z tego kroku, zmień nazwę klasy testującej np. na `UnitTestConstruction`.
 
@@ -100,7 +98,7 @@ Wykonuj zadania w podanej kolejności.
 
         // assert
         Assert.AreEqual(u.Licznik, expextedLicznik);
-        Assert.AreEqual(u.Mianownik, expectedMianownik); 
+        Assert.AreEqual(u.Mianownik, expectedMianownik);
     }
     ````
 
@@ -116,7 +114,7 @@ Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niekt�
     // u oraz v są "takie same"
     ````
 
-2. Wzorując się na typie `long` (formalnie [`System.Int64`](https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=netframework-4.7.2)) zaimplementuj metody `Parse(string)` oraz `TryParse(string, long)`, które przetwarzają poprawnie uformowany napis do ułamka.
+2. Wzorując się na typie `long` (formalnie [`System.Int64`](https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=netframework-4.7.2)) zaimplementuj metody `Ulamek Parse(string)` oraz `bool TryParse(string, out Ulamek)`, które przetwarzają poprawnie uformowany napis do ułamka.
 
 3. Zastanów się i zaimplementuj zgłaszanie odpowiednich wyjątków.
 
@@ -132,15 +130,19 @@ Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niekt�
 
 9. Utwórz stosowne testy jednostkowe weryfikujące poprawność opracowanych metod.
 
-
 #### Podpowiedzi - część 2
 
-1. Do konwersji z `string` do `Ulamek` będziesz musiał parsować napis. Rozważ zastosowanie metody [string.Split](https://docs.microsoft.com/pl-pl/dotnet/csharp/how-to/parse-strings-using-split). Możesz również zastosować [wyrażenia regularne (REGEX)](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions).
+1. W języku C# zwyczajowo, jeśli potrzebujemy tylko sygnatury metody (np. aby kod się poprawnie kompilował), a implementację pozostawiamy na później, zamiast kodu zgłaszamy wyjątek [`NotImplementedException`](https://docs.microsoft.com/pl-pl/dotnet/api/system.notimplementedexception?view=netstandard-2.0).
 
-2. Zadania dotyczące konwersji na inne typy liczbowe powtórzysz przy implementacji operatorów konwersji jawnej (rzutowanie) i niejawnej, w kolejnych krokach.
+2. Do konwersji z `string` do `Ulamek` będziesz musiał parsować napis. Rozważ zastosowanie metody [string.Split](https://docs.microsoft.com/pl-pl/dotnet/csharp/how-to/parse-strings-using-split). Możesz również zastosować [wyrażenia regularne (REGEX)](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions).
 
-3. W języku C# stałe definiowane są za pomocą słowa kluczowego [`const`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/const). Definiowana stała musi być jasno określona lub możliwa do ustalenia jeszcze w trakcie kompilacji. W naszym przypadku zasymulujesz działanie stałej zmienną tylko do odczytu (prawdopodobnie użyjesz `public static readonly`).
+3. Zadania dotyczące konwersji na inne typy liczbowe powtórzysz przy implementacji operatorów konwersji jawnej (rzutowanie) i niejawnej, w kolejnych krokach. Teraz wykonaj te implementacje i opracuj testy jednostkowe. Później, gdy będziesz refaktoryzował kod, testy będą "pilnowały" jego poprawności.
 
+4. W języku C# stałe definiowane są za pomocą słowa kluczowego [`const`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/const). Definiowana stała musi być jasno określona lub możliwa do ustalenia jeszcze w trakcie kompilacji. W naszym przypadku zasymulujesz działanie stałej zmienną tylko do odczytu (prawdopodobnie użyjesz `public static readonly`). Przeczytaj: [C# Const, ReadOnly & Static ReadOnly Differences](https://www.arungudelli.com/tutorial/c-sharp/10-differences-between-constant-vs-readonly-static-readonly-fields/).
+ 
+    Statyczne składniki klasy incjowane są w [statycznym konstruktorze](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/classes-and-structs/static-constructors). Składniki zadeklarowane jako `static readonly` muszą być inicjowane albo w statycznym konstruktorze, albo jako część swojej deklaracji. Dokumentacja Microsoft zaleca, iż - jeśli nie ma potrzeby definiowania statycznego konstruktora w klasie - to składniki `static readonly` inicjujemy w ich deklaracji, ze względów wydajnościowych.
 
+5. Aby sprawdzić pokrycie kodu testami jednostkowymi w Visual Studio 2019, wybierz menu `Test -> Analyze Code Coverage for All Tests`
+    ![Code Coverage Unit Tests](img/CodeCoverageUnitTests.png)
 
 [Początek](README.md) | [Krok poprzedni](step00.md) | [Krok następny](step02.md)

@@ -1,13 +1,11 @@
 # Typ `Ulamek` #
 
-> Autor: _Krzysztof Molenda_
-> Wersja: 1.1 (2018.09.01)
+* Autor: _Krzysztof Molenda_
+* Wersja: 1.2 (2019.10.01)
 
-Twoim zadaniem jest realizacja w C# typu `Ulamek`, reprezentującego matematyczną koncepcję liczby wymiernej. Realizacja typu powinna być spójna, kompletna, dobrze udokumentowana i przetestowana. Powinna dostarczać naturalnych dla użytkownika mechanizmów użycia (naturalnych = jak w matematyce oraz podobnych do tych, które stosowane są w analogicznych konstrukcjach języka C#).
+Twoim zadaniem jest realizacja w C# typu `Ulamek`, reprezentującego matematyczną koncepcję liczby wymiernej. Realizacja typu powinna być spójna, kompletna, dobrze udokumentowana i przetestowana. Powinna dostarczać naturalnych dla użytkownika mechanizmów użycia (naturalnych, tzn. jak w matematyce oraz podobnych do tych, które stosowane są w analogicznych konstrukcjach języka C#).
 
 > UWAGA: W realizacji zadania celowo w kodzie używać będziemy nazw polskich, dla celów edukacyjnych, aby wizualnie oddzielić to, co definiujemy, od tego, co jest zdefiniowane na poziomie języka i jego bibliotek. W praktyce stosujemy język angielski.
-
-
 
 
 ## Cele ##
@@ -33,7 +31,7 @@ Platformy .NET (.NET Framework, .NET Core) dostarczają predefiniowane typy licz
 
 * `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong` -- reprezentacja liczb całkowitych, bez utraty dokładności, w formie typu wartościowego
 
-* `float`, `double` -- zmiennoprzecinkowa reprezentacja liczb rzeczywistych, z utratą dokładności, w formie typu wartościowego
+* `float`, `double` -- zmiennoprzecinkowa reprezentacja liczb rzeczywistych, z potencjalną utratą dokładności, w formie typu wartościowego
 
 * `decimal` -- stałoprzecinkowa reprezentacja liczb rzeczywistych, ze stałą dokładnością ale pamięciożerna, w formie typu wartościowego
 

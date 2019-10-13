@@ -47,7 +47,6 @@ Wykonuj zadania w podanej kolejności.
 
 10. Oczywiście opracuj stosowne testy jednostkowe dla tych nowych funkcjonalności
 
-
 ### Podpowiedzi
 
 1. Aby przekazać do metody wiele argumentów użyj słowa kluczowego [params](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params).
