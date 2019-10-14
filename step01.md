@@ -1,6 +1,6 @@
 ## Krok 1. Podstawowa funkcjonalność ##
 
-W kroku tym zdefiniujesz podstawową funkcjonalność projektowanego typu.
+W kroku tym zdefiniujesz podstawową funkcjonalność projektowanego typu - zdefiniujesz wewnętrzną reprezentację danych ułamka (pola) zapewniając niezmienniczość tworzonych obiektów, zdefiniujesz konstruktory oraz tekstową reprezentację ułamka, określisz zasady dostępu do składników klasy, utworzysz testy jednostkowe.
 
 Wykonuj zadania w podanej kolejności.
 
@@ -15,7 +15,7 @@ Wykonuj zadania w podanej kolejności.
 4. Pamiętaj, aby zapewnić niezmienniczość obiektów typu `Ulamek`.
 
 5. Dostarcz konstruktory:
- 
+
     a. domyślny - wartość domyslna ułamka to `0`, a dokładnie `0/1`,
 
     b. dwuargumentowy - inicjujący ułamek o dowlnych wartościach licznika i mianownika,
@@ -46,11 +46,12 @@ Wykonuj zadania w podanej kolejności.
 
 2. Implementacja konstruktorów - możesz utworzyć trzy przeciążone konstruktory:
 
-    ````csharp
+    ```csharp
     Ulamek() { ... }
     Ulamek(long licznik) { ... }
     Ulamek(long licznik, long mianownik) { ... }
-    ````
+    ```
+
     oczywiście je łańcuchując w odpowiedni sposób. Ale możesz również skorzystać z mechanizmu [parametrów opcjonalnych](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments).
 
 3. Dla uproszczenia zapisu, tam gdzie nie jest to zbyt skomplikowane, wykorzystuj [notację lambda](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions).
@@ -65,7 +66,8 @@ Wykonuj zadania w podanej kolejności.
     Proces upraszczania należy umieścić w konstruktorach po to, by zapamiętany ułamek był już nieskracalny.
 
 5. Upraszczanie jest działaniem potencjalnie pochłaniającym czas (patrz: [Algorytm Euklidesa](https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)) - w przypadku dużych liczb budujących ułamek. Rozważ możliwość selektywnego włączania lub wyłączania tego procesu. Możesz to zrealizować, poprzez zdefiniowanie prywatnego konstruktora, np.:
-    ````csharp
+
+    ```csharp
     private Ulamek(long licznik, long mianownik, bool upraszczanie)
     {
         // ...
@@ -75,7 +77,8 @@ Wykonuj zadania w podanej kolejności.
         }
         // ...
     }
-    ````
+    ```
+
     Z tego konstruktora zawsze będziesz korzystał budując ułamki wewnątrz projektowanej klasy, pozostałe konstruktory - z domyślnie włączonym upraszczaniem - udostępnisz światowi zewnętrznemu.  
 
 6. Aby zapewnić niemożliwość operowania na obiektach typu `Ulamek`, których `mianownik` byłby zerowy, w konstruktorach **musisz** zgłosić wyjątek, np. `DivideByZeroException`.
@@ -107,12 +110,13 @@ Wykonuj zadania w podanej kolejności.
 Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niektórych przypadkach łatwiej będzie je zdefiniować równolegle, w kolejnych krokach (np. po implementacji _równości ułamków_) - lub obecny kod później zrefaktoryzować.
 
 1. Zaimplementuj konstruktor tworzący ułamek na podstawie tekstowej jego reprezentacji, tzn. `new Ulamek("-2/3") --> licznik = -2, mianownik = 3`. Konstruktor ten powinien być działaniem odwrotnym do metody `ToString()`, tzn. jeśli utworzysz ułamek, następnie wyeksportujesz go do postaci tekstowej i ponownie utworzysz ułamek na jej podstawie, to otrzymasz "taki sam" ułamek:
-    ````csharp
+
+    ```csharp
     var u = new Ulamek(1,2);
     var s = u.ToString();
     var v = new Ulamek(s);
     // u oraz v są "takie same"
-    ````
+    ```
 
 2. Wzorując się na typie `long` (formalnie [`System.Int64`](https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=netframework-4.7.2)) zaimplementuj metody `Ulamek Parse(string)` oraz `bool TryParse(string, out Ulamek)`, które przetwarzają poprawnie uformowany napis do ułamka.
 
@@ -139,7 +143,7 @@ Funkcjonalności z tej części mogą być zrealizowane już teraz, ale w niekt�
 3. Zadania dotyczące konwersji na inne typy liczbowe powtórzysz przy implementacji operatorów konwersji jawnej (rzutowanie) i niejawnej, w kolejnych krokach. Teraz wykonaj te implementacje i opracuj testy jednostkowe. Później, gdy będziesz refaktoryzował kod, testy będą "pilnowały" jego poprawności.
 
 4. W języku C# stałe definiowane są za pomocą słowa kluczowego [`const`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/const). Definiowana stała musi być jasno określona lub możliwa do ustalenia jeszcze w trakcie kompilacji. W naszym przypadku zasymulujesz działanie stałej zmienną tylko do odczytu (prawdopodobnie użyjesz `public static readonly`). Przeczytaj: [C# Const, ReadOnly & Static ReadOnly Differences](https://www.arungudelli.com/tutorial/c-sharp/10-differences-between-constant-vs-readonly-static-readonly-fields/).
- 
+
     Statyczne składniki klasy incjowane są w [statycznym konstruktorze](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/classes-and-structs/static-constructors). Składniki zadeklarowane jako `static readonly` muszą być inicjowane albo w statycznym konstruktorze, albo jako część swojej deklaracji. Dokumentacja Microsoft zaleca, iż - jeśli nie ma potrzeby definiowania statycznego konstruktora w klasie - to składniki `static readonly` inicjujemy w ich deklaracji, ze względów wydajnościowych.
 
 5. Aby sprawdzić pokrycie kodu testami jednostkowymi w Visual Studio 2019, wybierz menu `Test -> Analyze Code Coverage for All Tests`

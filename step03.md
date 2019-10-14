@@ -1,4 +1,4 @@
-## Krok 3. Operacje arytmetyczne ##
+## Krok 3. Operacje arytmetyczne
 
 W kroku tym zdefiniujesz podstawowe działania arytmetyczne i operacje matematyczne na ułamkach.
 
@@ -15,20 +15,20 @@ Wykonuj zadania w podanej kolejności.
 3. W projekcie z testami jednostkowymi utwórz plik o nazwie `UnitTestUlamekArithmetic.cs`. Możesz to wykonać kolejno poleceniami: *Add > New Item .. > Basic Unit Test*. testy jednostkowe związane z implementacją równości ułamków zapisz w tym pliku.
 
 4. Utwórz publiczną metodę o sygnaturze
-    ````csharp
+    ```csharp
     public Ulamek Plus(Ulamek inny)
-    ````
+    ```
     realizującą operację dodawania ułamków.
 
     Próba dodania `null` skutkuje zgłoszeniem wyjątku `ArgumentException`.
 
 5. Utwórz publiczną statyczną metodę o sygnaturze
-    ````csharp
+    ```csharp
     public static Ulamek Suma(Ulamek u1, Ulamek u2)
-    ````
+    ```
     realizującą operację obliczania sumy dwóch ułamków.
 
-    Próba dodania `null` skutkuje zgłoszeniem wyjątku `ArgumentException`.
+    Próba sumowania `null` skutkuje zgłoszeniem wyjątku `ArgumentException`.
 
 6. Zmodyfikuj metodę `Suma` tak, aby mogła przyjąć wiele argumentów (ale co najmniej 2).
 
@@ -37,13 +37,12 @@ Wykonuj zadania w podanej kolejności.
 8. Zrób to samo dla pozostałych operatorów arytmetycznych dwuargumentowych (`-`, `*`, `/`, `%`) oraz jednoargumentowego `-` (znak przeciwny).
 
 9. Zaimplementuj dla ułamka wybrane metody z `System.Math`
-    * Abs
-    * Sign
-    * Floor
-    * Ceiling
-    * Max
-    * Pow
-    * Round
+    * `Abs`
+    * `Sign`
+    * `Floor`
+    * `Ceiling`
+    * `Max`
+    * `Pow`
 
 10. Oczywiście opracuj stosowne testy jednostkowe dla tych nowych funkcjonalności
 
@@ -53,6 +52,6 @@ Wykonuj zadania w podanej kolejności.
 
 2. Przeczytaj [dokumentację](https://docs.microsoft.com/en-US/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators) na temat przeciążania operatorów.
 
-3. Klasa [System.Math](https://docs.microsoft.com/pl-pl/dotnet/api/system.math?view=netframework-4.7.2)
+3. Klasa [System.Math](https://docs.microsoft.com/pl-pl/dotnet/api/system.math?view=netframework-4.7.2).
 
 [Początek](README.md) | [Krok poprzedni](step02.md) | [Krok następny](step04.md)
