@@ -1,51 +1,51 @@
-## Krok 2. Równość ułamków ##
+## Krok 2. Równość ułamków
 
 Krok ten będzie miał niewiele zadań do wykonania (literalnie), ale jest prawdopodobnie najtrudniejszy.
-
 
 Wykonuj zadania w podanej kolejności.
 
 ### Zadania do wykonania
 
-1. W projekcie _Class library_ dodaj nową klasę. Plik nazwij `UlamekEquals.cs`. 
+1. W projekcie typu _Class library_ dodaj nową klasę. Plik nazwij `UlamekEquals.cs`.
 
 2. Zmień nazwę klasy na `Ulamek`. Dodaj słowo kluczowe `partial` przed `class`. Korzystasz z funkcjonalności dzielenia klasy na wiele plików [`partial class`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods). Rozbudowę klasy `Ulamek` w zakresie tego kroku przeprowadzisz w tym pliku.
 
-3. W projekcie z testami jednostkowymi utwórz plik o nazwie `UnitTestUlamekEquals.cs`. Możesz to wykonać kolejno poleceniami: *Add > New Item .. > Basic Unit Test*. testy jednostkowe związane z implementacją równości ułamków zapisz w tym pliku.
+3. W projekcie z testami jednostkowymi utwórz plik o nazwie `UnitTestUlamekEquals.cs`. Możesz to wykonać kolejno poleceniami: *Add > New Item .. > Basic Unit Test* (w tej sytuacji wszystkie wymagane adnotacje wstawione zostaną do kodu klasy testującej). Testy jednostkowe związane z implementacją równości ułamków zapisz w tym pliku.
 
-4. Opracuj odpowiednie przeciążenie metody `Equals()`. Równocześnie MUSISZ przeciążyć `GetHashCode()`.
+4. Opracuj odpowiednie przesłonięcie metody `Equals()`. Równocześnie **MUSISZ** przeciążyć `GetHashCode()`.
 
 5. Zaimplementuj interfejs `IEquatable<Ulamek>`.
 
 6. Zaimplementuj statyczną wersję metody `Equals` o sygnaturze:
-    ````charp
+
+    ```charp
     public static bool Equals(Ulamek u1, Ulamek u2)
-    ````
-7. Zaimplementuj przeciążenie operatora `==`. Będziesz MUSIAŁ równocześnie zaimplementować przeciążenie operatora `!=`.
+    ```
+
+7. Zaimplementuj przeciążenie operatora `==`. Będziesz **MUSIAŁ** równocześnie zaimplementować przeciążenie operatora `!=`.
 
 8. Wszystkie powyższe metody muszą być wzajemnie spójne!
 
 9. Opracuj testy jednostkowe
 
-
 ### Podpowiedzi
 
 1. Poczytaj o przeciążaniu `Equals` w C#:
   
-  * https://github.com/loganfranken/overriding-equals-in-c-sharp
+   * <https://github.com/loganfranken/overriding-equals-in-c-sharp>
 
-  * https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/equality-operators
+   * <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/equality-operators>
 
-  * https://docs.microsoft.com/en-us/dotnet/api/system.object.equals
+   * <https://docs.microsoft.com/en-us/dotnet/api/system.object.equals>
 
-2. Poczytaj o implementowaniu interfejsu [`IEquatable<T>`](https://docs.microsoft.com/en-US/dotnet/api/system.iequatable), a w szczególności o metodzie [`IEquatable<T>.Equals(T)`](https://docs.microsoft.com/pl-pl/dotnet/api/system.iequatable)
+2. Poczytaj o implementowaniu interfejsu [`IEquatable<T>`](https://docs.microsoft.com/en-US/dotnet/api/system.iequatable), a w szczególności o metodzie [`IEquatable<T>.Equals(T)`](https://docs.microsoft.com/pl-pl/dotnet/api/system.iequatable).
   
-3. _Równość_ jest relacją równoważności (ściśle zdefiniowane pojęcie matematyczne), spełnia zatem nastepujące warunki:
+3. _Równość_ jest [relacją równoważności](https://pl.wikipedia.org/wiki/Relacja_r%C3%B3wnowa%C5%BCno%C5%9Bci) (ściśle zdefiniowane pojęcie matematyczne), spełnia zatem następujące warunki:
 
     a. `x.Equals(x)` zwraca `true` //zwrotność
-   
+
     b. `x.Equals(y)` zwraca tę samą wartość, co `y.Equals(x)` //symetria
-   
+
     c. jeżeli `x.Equals(y)` zwraca `true` oraz `y.Equals(z))` zwraca `true`, wtedy `x.Equals(z)` zwraca `true` //przechodniość
 
     d. `x.Equals(y)` zwraca `true` jesli oba `x` oraz `y` są `NaN` (dla typów liczbowych)
@@ -64,16 +64,17 @@ Wykonuj zadania w podanej kolejności.
 
 5. Co to jest [`NullReferenceException`](https://docs.microsoft.com/pl-pl/dotnet/api/system.nullreferenceexception). Kiedy się może pojawić?
 
-5. Przeanalizuj porównywanie do `null`:
+6. Przeanalizuj porównywanie do `null`:
     * `if( x == null ) ...`
     * `if( x is null ) ...`
     * `if( x.Equals(null) ) ...`
     * `if( object.ReferenceEquals( x, null ) ...`
-    
+
     Zwróć uwagę na ukryte niebezpieczeństwa.
 
-6. Porównywać możesz obiekty tego samego typu (czasami dopuszczalne dla podtypu). Jak sprawdzić, czy dwa obiekty są tego samego typu?
+7. Porównywać możesz obiekty tego samego typu (czasami dopuszczalne dla podtypu). Jak sprawdzić, czy dwa obiekty są tego samego typu?
   Przeanalizuj poniższy kod:
+
     ````csharp
     //jakie są różnice (czy są)
     if (!(obj is Ulamek)) return false;
@@ -81,15 +82,11 @@ Wykonuj zadania w podanej kolejności.
     if (this.GetType() != obj.GetType()) return false;
     if (!object.ReferenceEquals(this.GetType(), obj.GetType())) return false;
     ````
-7. Dodatkowo (częste pytania egzaminacyjne):
+
+8. Dodatkowo (częste pytania egzaminacyjne):
   
     * jaka jest różnica między operatorem `is` oraz `as`
-    
     * co zwraca operator `typeof`, o co metoda `GetType()`
-    
     * czym jest `Type`
-
-
-
 
 [Początek](README.md) | [Krok poprzedni](step01.md) | [Krok następny](step03.md)
