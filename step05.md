@@ -30,8 +30,10 @@ Wykonuj zadania w podanej kolejności.
 
 1. Poczytaj [o konwersjach ogólnie](https://docs.microsoft.com/en-US/dotnet/csharp/programming-guide/statements-expressions-operators/using-conversion-operators) oraz o konwersjach [domyślnych](https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/implicit) i [jawnych](https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/explicit). Wprowadzenie konwersji nie wymaga implementowania jakiegokolwiek interfejsu.
 
-2. Poczytaj o implementacji interfejsu [`IConvertible`](https://docs.microsoft.com/en-Us/dotnet/api/system.iconvertible?view=netstandard-2.0). Dołączanie do klasy `Convert` metod konwersji własnych typów na typy tam predefiniowane jest trochę pokrętne. Najpierw wartość `Ulamka` musi być przekonwertowana na `double`, a następnie odpowiednią metodą z `Convert` na właściwy typ. Aby zaimplementować interfejs musimy napisać kod dla kilkunastu (kilkudziesięciu) metod. Zaletą takiej implementacji jest fakt, iż z naszej klasy można korzystać w standardowy sposób.
+2. Poczytaj o implementacji interfejsu [`IConvertible`](https://docs.microsoft.com/en-Us/dotnet/api/system.iconvertible?view=netstandard-2.0). Dołączanie do klasy `Convert` metod konwersji własnych typów na typy tam predefiniowane wymaga zaimplementowania interfejsu `IConvertible` -  musimy napisać kod dla kilkunastu (kilkudziesięciu) metod. Zaletą takiej implementacji jest fakt, iż z naszej klasy można korzystać w standardowy sposób. Przeczytaj również: [Type conversion example in C# .NET using the IConvertible interface](https://dotnetcodr.com/2015/04/22/type-conversion-example-in-c-net-using-the-iconvertible-interface/).
 
-3. Raczej nie stosuje się konwersji jawnych i niejawnych dla `string` - od tego są dostarczane dedykowane metody (`Parse` oraz `TryParse`).
+3. Poczytaj o konwersjach w .NET oraz C#: [Type Conversion in the .NET Framework](https://docs.microsoft.com/en-us/dotnet/standard/base-types/type-conversion?view=netframework-4.8).
+
+4. Raczej nie stosuje się konwersji jawnych i niejawnych dla `string` - od tego są dostarczane dedykowane metody (`Parse` oraz `TryParse`).
 
 [Początek](README.md) | [Krok poprzedni](step04.md) | [Krok następny](step06.md)

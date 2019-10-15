@@ -34,9 +34,11 @@ Wykonuj zadania w podanej kolejności.
 
 7. Zdefiniuj przeciążenie operatora `+`.
 
-8. Zrób to samo dla pozostałych operatorów arytmetycznych dwuargumentowych (`-`, `*`, `/`) oraz jednoargumentowego `-` (znak przeciwny), inkrementacji (`++`) i dekrementacji (`--`).
+8. Zwróć uwagę na fakt, że działania na ułamkach - wewnętrznie - wymagają obliczeń arytmetycznych, które potencjalnie mogą przekroczyć zakres reprezentacji `long` (_overflow_). Przykładowo, dodając dwa ułamki wykonasz mnożenie mianowników - a ten wynik może przekroczyć `long.MaxValue`, generując liczbę ujemną i w efekcie zmieni się znak ułamka. Powinieneś zadbać o weryfikację przekroczenia zakresu. Poczytaj: [checked/unchecked](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/checked-and-unchecked).
 
-9. Zaimplementuj dla ułamka wybrane metody z [`System.Math`]((https://docs.microsoft.com/en-us/dotnet/api/system.math?view=netframework-4.7.2)):
+9. Zrób to samo dla pozostałych operatorów arytmetycznych dwuargumentowych (`-`, `*`, `/`) oraz jednoargumentowego `-` (znak przeciwny), inkrementacji (`++`) i dekrementacji (`--`).
+
+10. Zaimplementuj dla ułamka wybrane metody z [`System.Math`]((https://docs.microsoft.com/en-us/dotnet/api/system.math?view=netframework-4.7.2)):
     * `Abs`
     * `Sign`
     * `Floor`
@@ -44,7 +46,7 @@ Wykonuj zadania w podanej kolejności.
     * `Max`
     * `Pow`
 
-10. Oczywiście opracuj stosowne testy jednostkowe dla tych nowych funkcjonalności.
+11. Oczywiście opracuj stosowne testy jednostkowe dla tych nowych funkcjonalności.
 
 ### Podpowiedzi
 
